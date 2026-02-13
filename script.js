@@ -62,7 +62,7 @@ const submitBtn = document.getElementById('submitBtn');
 const btnText = document.getElementById('btnText');
 const btnLoader = document.getElementById('btnLoader');
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMQmjv9pC2E-kQUQpUHUHr5-14wtAebYQ_eiqIC945MtV0AcuXZOFQHkAP7iTsw6b_og/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwfgZ-twJux3DrOnM_O-ImOenCsmOsrvPdSlumakWV0Gmu4FG9ZB4Ao7XpZJG4IXn96JQ/exec";
 
 // Functions
 function openEnquiryModal(e) {
@@ -124,31 +124,20 @@ enquiryForm.addEventListener('submit', (e) => {
     btnLoader.style.display = 'block';
 
     const formData = new FormData(enquiryForm);
-    const data = new URLSearchParams();
-    for (const pair of formData) {
-        data.append(pair[0], pair[1]);
-    }
+    const params = new URLSearchParams(formData);
 
-    // Using 'no-cors' mode is the standard way to fix Google Script CORS errors.
-    // We won't be able to read the response, but the data will reach the sheet.
     fetch(SCRIPT_URL, {
         method: 'POST',
-        body: data,
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        }
+        body: params,
+        mode: 'no-cors'
     })
         .then(() => {
-            // Since we use no-cors, we assume success if the request was sent
             modalBody.style.display = 'none';
             modalFooter.style.display = 'none';
             successScreen.style.display = 'block';
         })
         .catch(error => {
-            console.error('Error!', error.message);
-            // Even if there's a CORS error, the data often reaches the sheet.
-            // We'll show success anyway to improve UX, but log the error.
+            console.error('Submission error:', error);
             modalBody.style.display = 'none';
             modalFooter.style.display = 'none';
             successScreen.style.display = 'block';
