@@ -13,17 +13,23 @@
             <div class="logo">
                 <img src="logo.png" alt="Cubix Portable Cabins">
             </div>
-            <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="mobileNav">
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="about.html" class="active">ABOUT US</a></li>
-                    <li><a href="services.html">SERVICES</a></li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="contact.html">CONTACT US</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
 
     <!-- About Section -->
     <section class="about-section">
@@ -169,5 +175,23 @@
     <div class="enquire-now-tab">
         <a href="contact.html">Enquire Now</a>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mobileNav');
+            const overlay = document.getElementById('mobileOverlay');
+            const hamburger = document.querySelector('.hamburger');
+            
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        document.querySelectorAll('#mobileNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+    </script>
 </body>
 </html>
