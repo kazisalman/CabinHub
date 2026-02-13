@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Arial', 'Helvetica', sans-serif;
     line-height: 1.6;
@@ -24,7 +30,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
@@ -62,8 +68,8 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('placeholder.jpg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('cabin_main.png') center/cover;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -117,7 +123,7 @@ nav ul li a.active {
     background: #002244;
     border-color: #002244;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -130,7 +136,7 @@ nav ul li a.active {
     background: #144070;
     border-color: #144070;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-small {
@@ -155,13 +161,13 @@ nav ul li a.active {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -303,13 +309,13 @@ nav ul li a.active {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-card img {
@@ -367,13 +373,13 @@ nav ul li a.active {
 .about-img-large {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-img-small {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-text h2 {
@@ -478,13 +484,13 @@ nav ul li a.active {
 .gallery-item {
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
@@ -543,7 +549,7 @@ nav ul li a.active {
 
 .contact-map iframe {
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
@@ -620,13 +626,13 @@ footer h3 {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .fab-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .email-btn {
@@ -661,7 +667,7 @@ footer h3 {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -700,6 +706,7 @@ img[src="logo.png"] {
 
 /* Mobile Breakpoint */
 @media (max-width: 768px) {
+
     /* Header Mobile */
     header {
         padding: 10px 0;
@@ -717,13 +724,13 @@ img[src="logo.png"] {
     nav {
         position: fixed;
         top: 0;
-        left: -100%;
+        left: -270px;
         width: 270px;
         height: 100vh;
         background: white;
         z-index: 9999;
         transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     }
 
     nav.active {
@@ -1177,12 +1184,12 @@ img[src="logo.png"] {
     .fab-btn {
         width: 55px;
         height: 55px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     /* Enquire Now Tab Mobile */
     .enquire-now-tab {
-        right: -2px;
+        right: 0;
         top: 45%;
     }
 
