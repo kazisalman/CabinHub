@@ -688,7 +688,7 @@ footer h3 {
 
 /* Placeholder Image */
 img[src="Cabin_homepage.png"],
-img[src="logo.png"] {
+img[src="msb.png"] {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: block;
 }
