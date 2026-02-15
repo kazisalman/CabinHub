@@ -10,7 +10,7 @@ This is a 100% mobile-responsive replica of the Cubix Portable Cabins website. V
 - `gallery.html` - Image gallery page
 - `contact.html` - Contact page with location and contact details
 - `styles.css` - Complete CSS with mobile responsive breakpoints
-- `placeholder.jpg` - Placeholder image (replace with actual images)
+- `Cabin_homepage.png` - Placeholder image (replace with actual images)
 - `logo.png` - Logo placeholder (replace with actual logo)
 
 ## ✅ Version 2.0 Features (NEW)
@@ -66,7 +66,7 @@ The mobile menu includes:
 
 ## How to Use
 1. Extract the ZIP file
-2. Replace `placeholder.jpg` with actual cabin images
+2. Replace `Cabin_homepage.png` with actual cabin images
 3. Replace `logo.png` with the actual Cubix logo
 4. Open `index.html` in a web browser
 5. Test on mobile by resizing browser or using device
@@ -118,7 +118,7 @@ Tested and works on:
 
 ## Image Replacement Guide
 Currently using single placeholder image. For production:
-1. Replace all instances of `placeholder.jpg` with actual images
+1. Replace all instances of `Cabin_homepage.png` with actual images
 2. Use high-quality images (1200px width minimum for desktop)
 3. Create mobile-optimized versions (800px width)
 4. Optimize images for web (compress to reduce load time)

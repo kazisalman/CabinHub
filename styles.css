@@ -1,8 +1,25 @@
 /* Reset and Base Styles */
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+img,
+iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -24,7 +41,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
@@ -62,8 +79,8 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('placeholder.jpg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('Cabin_homepage.png') center/cover;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -117,7 +134,7 @@ nav ul li a.active {
     background: #002244;
     border-color: #002244;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -130,7 +147,7 @@ nav ul li a.active {
     background: #144070;
     border-color: #144070;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-small {
@@ -155,13 +172,13 @@ nav ul li a.active {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -303,13 +320,13 @@ nav ul li a.active {
     background: white;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .service-card img {
@@ -367,13 +384,13 @@ nav ul li a.active {
 .about-img-large {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-img-small {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-text h2 {
@@ -478,13 +495,13 @@ nav ul li a.active {
 .gallery-item {
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item img {
@@ -543,7 +560,7 @@ nav ul li a.active {
 
 .contact-map iframe {
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
@@ -620,13 +637,13 @@ footer h3 {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
 .fab-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .email-btn {
@@ -647,7 +664,7 @@ footer h3 {
     right: 0;
     top: 50%;
     transform: translateY(-50%) rotate(-90deg);
-    transform-origin: right center;
+    transform-origin: bottom right;
     z-index: 998;
 }
 
@@ -661,7 +678,7 @@ footer h3 {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -670,7 +687,7 @@ footer h3 {
 }
 
 /* Placeholder Image */
-img[src="placeholder.jpg"],
+img[src="Cabin_homepage.png"],
 img[src="logo.png"] {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: block;
@@ -700,6 +717,7 @@ img[src="logo.png"] {
 
 /* Mobile Breakpoint */
 @media (max-width: 768px) {
+
     /* Header Mobile */
     header {
         padding: 10px 0;
@@ -723,7 +741,7 @@ img[src="logo.png"] {
         background: white;
         z-index: 9999;
         transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     }
 
     nav.active {
@@ -811,7 +829,7 @@ img[src="logo.png"] {
         width: 100%;
         height: 100vh;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 9998;
+        z-index: 8000;
     }
 
     .mobile-overlay.active {
@@ -827,6 +845,7 @@ img[src="logo.png"] {
         font-size: 30px;
         color: #333;
         cursor: pointer;
+        pointer-events: none;
         width: 40px;
         height: 40px;
         display: flex;
@@ -853,6 +872,7 @@ img[src="logo.png"] {
     header {
         padding-top: 45px;
         position: relative;
+        z-index: 9000;
     }
 
     /* Hero Section Mobile */
@@ -1177,12 +1197,12 @@ img[src="logo.png"] {
     .fab-btn {
         width: 55px;
         height: 55px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     }
 
     /* Enquire Now Tab Mobile */
     .enquire-now-tab {
-        right: -2px;
+        right: 0;
         top: 45%;
     }
 
@@ -1272,14 +1292,20 @@ img[src="logo.png"] {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: rgba(0, 0, 0, 0.6);
     animation: fadeIn 0.3s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {
@@ -1299,6 +1325,7 @@ img[src="logo.png"] {
         transform: translateY(-50px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -1395,16 +1422,22 @@ img[src="logo.png"] {
 /* Modal Mobile Responsive */
 @media (max-width: 768px) {
     .modal-content {
-        margin: 10% auto;
+        margin: 15% auto;
         padding: 25px 20px;
-        width: 95%;
+        width: 92%;
+        max-width: 95%;
     }
-    
+
     .modal-content h2 {
         font-size: 24px;
+        padding-right: 30px;
     }
-    
+
     .close-modal {
         font-size: 28px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        float: none;
     }
 }
