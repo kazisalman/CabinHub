@@ -80,7 +80,7 @@ The mobile menu includes:
 - CONTACT US (contact.html)
 
 ## Contact Information Included
-- Phone: +91 9513224104
+- Phone: +91 7045486964
 - Email: cubixportablecabins@gmail.com
 - Two addresses in Mumbai-Pune area
 - Google Maps integration
