@@ -37,7 +37,7 @@ body {
 /* Header Styles */
 header {
     background: linear-gradient(135deg, #003366 0%, #1a5490 100%);
-    padding: 15px 0;
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,11 +48,81 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+}
+
+.logo,
+.logo a {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 50px;
+    height: 80px;
     width: auto;
+    display: block;
+}
+
+.header-contact {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.header-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.header-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.header-btn.call-btn {
+    background: #003366;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-btn.whatsapp-btn {
+    background: #25D366;
+}
+
+.header-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .header-contact {
+        margin-right: 15px;
+        gap: 8px;
+    }
+
+    .header-btn span {
+        display: none;
+    }
+
+    .header-btn {
+        padding: 8px;
+        border-radius: 50%;
+    }
+
+    .header-btn svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 nav ul {
@@ -80,7 +150,7 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('Cabin_homepage.png') center/cover;
+        url('images/home/home1.jpg') center/cover;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -181,10 +251,64 @@ nav ul li a.active {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.product-card img {
+/* Card Image Slider */
+.card-slider {
+    position: relative;
     width: 100%;
     height: 250px;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    width: 100%;
+}
+
+.slider-container img {
+    min-width: 100%;
+    height: 100% !important;
     object-fit: cover;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 51, 102, 0.5);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.slider-btn.next {
+    right: 0;
+}
+
+.slider-btn.prev {
+    left: 0;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 51, 102, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.product-card .card-slider,
+.service-card .card-slider {
+    border-bottom: 1px solid #eee;
 }
 
 .product-info {
@@ -329,10 +453,7 @@ nav ul li a.active {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.service-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+.service-card .card-slider {
     position: relative;
 }
 
@@ -720,15 +841,17 @@ img[src="msb.png"] {
 
     /* Header Mobile */
     header {
-        padding: 10px 0;
+        padding: 0;
     }
 
     header .container {
         padding: 0 15px;
+        height: 60px;
     }
 
     .logo img {
-        height: 40px;
+        height: 60px;
+        display: block;
     }
 
     /* Mobile Navigation - Hamburger Menu */
@@ -855,7 +978,7 @@ img[src="msb.png"] {
 
     /* Top Call Bar */
     header::before {
-        content: 'Call Us : +91 9513254104';
+        content: 'Call Us : +91 9987914263';
         display: block;
         background: #1a5490;
         color: white;
@@ -870,7 +993,9 @@ img[src="msb.png"] {
     }
 
     header {
-        padding-top: 45px;
+        padding-top: 35px;
+        /* 35px for call bar */
+        padding-bottom: 0;
         position: relative;
         z-index: 9000;
     }

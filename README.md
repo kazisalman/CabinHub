@@ -16,7 +16,7 @@ This is a 100% mobile-responsive replica of the Cubix Portable Cabins website. V
 ## ✅ Version 2.0 Features (NEW)
 
 ### Mobile-First Responsive Design
-✅ **Top Call Bar** - "Call Us : +91 9513254104" displayed at top on mobile
+✅ **Top Call Bar** - "Call Us : +91 9987914263" displayed at top on mobile
 ✅ **Hamburger Menu** - Smooth slide-in navigation from left side
 ✅ **Mobile Overlay** - Dark overlay when menu is open
 ✅ **Touch-Optimized** - All buttons and links sized for mobile touch
@@ -80,7 +80,7 @@ The mobile menu includes:
 - CONTACT US (contact.html)
 
 ## Contact Information Included
-- Phone: +91 7045486964
+- Phone: +91 9987914263
 - Email: cubixportablecabins@gmail.com
 - Two addresses in Mumbai-Pune area
 - Google Maps integration
