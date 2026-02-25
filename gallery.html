@@ -119,7 +119,7 @@
                     <h3>LOCATION</h3>
                     <div class="map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15079.162344873606!2d73.05806979045464!3d19.11684073259821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1b5a129ff09%3A0x14b20500b5020587!2sKiravli%20Village%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1771439784591!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6079.865182307853!2d73.0758386!3d19.1054445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c98f4d556c2b%3A0x0!2sDhansar%2C%20Navi%20Mumbai%2C%20Maharashtra%20410208%2C%20IN!5e0!3m2!1sen!2sin!4v1771440000000!5m2!1sen!2sin"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -130,7 +130,8 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <h4>ADDRESS</h4>
-                            <p>Dahisar, Near Indian Petrol Pump, Kirivali village, Thane 400612</p>
+                            <p>Dhansar Village Rd, near Bafna Motors, Dhansar, Navi Mumbai, Maharashtra 410208, India
+                            </p>
                         </div>
                         <div class="contact-item">
                             <h4>PHONE</h4>
@@ -253,6 +254,14 @@
                     });
                 }
             });
+
+            // Auto-open modal on first land
+            if (!sessionStorage.getItem('modalSeen')) {
+                setTimeout(() => {
+                    openEnquireModal();
+                    sessionStorage.setItem('modalSeen', 'true');
+                }, 2000); // 2 second delay for better UX
+            }
         });
 
         // Close modal
@@ -317,6 +326,55 @@
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
+            }
+        });
+        // Lightbox functionality
+        const lightbox = document.createElement('div');
+        lightbox.id = 'galleryLightbox';
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" src="">
+           
+        `;
+        document.body.appendChild(lightbox);
+
+        const lightboxImg = lightbox.querySelector('.lightbox-content');
+        const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+        const closeLightbox = lightbox.querySelector('.close-lightbox');
+
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.parentElement.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+                lightboxCaption.textContent = img.alt;
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeLightbox.onclick = () => {
+            lightbox.style.display = 'none';
+            if (!document.querySelector('.modal[style*="display: block"]')) {
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        lightbox.onclick = (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                if (!document.querySelector('.modal[style*="display: block"]')) {
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        };
+
+        // Esc key to close lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+                if (!document.querySelector('.modal[style*="display: block"]')) {
+                    document.body.style.overflow = 'auto';
+                }
             }
         });
     </script>
